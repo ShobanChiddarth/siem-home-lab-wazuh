@@ -28,7 +28,7 @@
 | --- | --- | --- | --- | 
 | `wazuh-lab-corporate` | Internal Network | Corporate LAN Network | Network: `10.0.0.0/24`<br>Gateway: `10.0.0.1`<br>DNS: `10.0.0.1` |
 | `pfsense-to-pfsense-wazuh-lab` | Internal Network | Point to Point link between 2 pfSense routers | Network: `172.16.0.0/30` |
-| `vboxnet3` | VirtuaBox Host Only Ethernet | Attacker's LAN Network | Network: `192.168.59.0/24`<br>Gateway: `192.168.59.2`<br>DNS: `1.1.1.1` |
+| `vboxnet3` | VirtualBox Host Only Ethernet | Attacker's LAN Network | Network: `192.168.59.0/24`<br>Gateway: `192.168.59.2`<br>DNS: `1.1.1.1` |
 | `NAT` | VirtualBox Managed NAT | Public internet connectivity | (fully managed by VirtualBox) |
 
 ### Adapters details of every VM
@@ -112,10 +112,10 @@ under the `<syscheck>` tag and restarted the Wazuh service from `services.msc` t
 
 Full `ossec.conf` file: [assets/ossec.conf](./assets/ossec.conf)
 
-### 2. Debian adinistrative desktop
+### 2. Debian administrative desktop
 
 The Wazuh agent in Debian desktop would monitor
-- sudo to ROOT escalatino
+- sudo to ROOT escalation
 - failed login attempts
 - SSH brute force
 
@@ -129,7 +129,7 @@ So anytime I did any of those, all of that were monitored and sent over to Wazuh
 1. Create a text file inside `C:\Users\Administrator\Desktop\MonitorMe` in the Windows user's VM
 2. Edit it a few times
 
-### sudo to ROOT escalation in Debain
+### sudo to ROOT escalation in Debian
 1. Open terminal
 2. type `sudo su`
 3. enter the password
@@ -147,7 +147,7 @@ This command will try out every password inside `/usr/share/wordlists/rockyou.tx
 
 Also after running this for a few seconds you will be blocked from SSHing into Debian, this is a security measure that comes in built. You can try entering the correct password but after running this command, it won't even go until the password prompt and will just say "Connection refused".
 
-## Logs queries used to filer the logs
+## Logs queries used to filter the logs
 
 | Purpose | Query |
 | --- | --- |
@@ -162,6 +162,6 @@ Also after running this for a few seconds you will be blocked from SSHing into D
 Scan this qr code to watch video:
 
 <!-- ![demo-video](./assets/demo-video-qr-code.png) -->
-<a href="https://youtu.be/X-zppQ0WpaU" _target="blank"><img src="./assets/demo-video-qr-code.png" width="300" height="300" alt="demo-video-qr"></a>
+<a href="https://youtu.be/X-zppQ0WpaU" target="_blank"><img src="./assets/demo-video-qr-code.png" width="300" height="300" alt="demo-video-qr"></a>
 
 Or [**CLICK HERE**](https://youtu.be/X-zppQ0WpaU)

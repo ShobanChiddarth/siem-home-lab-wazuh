@@ -98,3 +98,52 @@ ip route 10.0.0.0 255.255.255.0 172.16.0.1
 
 This way, attacker has a reliable window into the corporate LAN (assume attacker is a frustrated employee or someone who stole the VPN credentials) without attacker using the corporate router for public internet access.
 
+## Things that were monitored
+
+### 1. Directory `C:\Users\Administrator\Desktop\MonitorMe` in Windows User Desktop
+
+I edited the file `C:\Program Files (x86)\ossec-agent\ossec.conf` to include this one line
+
+```
+<directories realtime="yes">C:\Users\Administrator\Desktop\MonitorMe</directories>
+```
+
+under the `<syscheck>` tag and restarted the Wazuh service from `services.msc` then any file integrity changes to that directory were monitored and sent over to Wazuh server.
+
+Full `ossec.conf` file: [assets/ossec.conf](./assets/ossec.conf)
+
+### 2. Debian adinistrative desktop
+
+The Wazuh agent in Debian desktop would monitor
+- sudo to ROOT escalatino
+- failed login attempts
+- SSH brute force
+
+by default.
+
+So anytime I did any of those, all of that were monitored and sent over to Wazuh server.
+
+## Attacks and events carried out
+
+### Windows FIM
+1. Create a text file inside `C:\Users\Administrator\Desktop\MonitorMe` in the Windows user's VM
+2. Edit it a few times
+
+### sudo to ROOT escalation in Debain
+1. Open terminal
+2. type `sudo su`
+3. enter the password
+
+### SSH brute force on Debian
+1. Make sure ssh server is running in Debian desktop
+2. Open Kali VM
+3. Run this command
+
+```bash
+hydra -l debian -P /usr/share/wordlists/rockyou.txt 10.0.0.100 ssh -t 4 -f -vV
+```
+
+This command will try out every password inside `/usr/share/wordlists/rockyou.txt` for connecting to Debian via SSH. You don't need to let it finish, you can interrupt it midway to save some resources as after a few seconds it will be detected, logged and sent to Wazuh server.
+
+Also after running this for a few seconds you will be blocked from SSHing into Debian, this is a security measure that comes in built. You can try entering the correct password but after running this command, it won't even go until the password prompt and will just say "Connection refused".
+

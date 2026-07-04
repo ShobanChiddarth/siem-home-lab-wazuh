@@ -157,3 +157,6 @@ Also after running this for a few seconds you will be blocked from SSHing into D
 | Show events from Windows | `agent.name:windows-user` |
 | Show events from Debian | `agent.name:debian-admin` |
 
+## Demo Video
+
+<iframe width="1905" height="876" src="https://www.youtube.com/embed/X-zppQ0WpaU" title="SIEM Home Lab in Wazuh Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>

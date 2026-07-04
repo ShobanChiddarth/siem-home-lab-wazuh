@@ -161,6 +161,7 @@ Also after running this for a few seconds you will be blocked from SSHing into D
 
 Scan this qr code to watch video:
 
-![demo-video](./assets/demo-video-qr-code.png)
+<!-- ![demo-video](./assets/demo-video-qr-code.png) -->
+<img src="./assets/demo-video-qr-code.png" width="300" height="300" alt="demo-video-qr">
 
 Or [**CLICK HERE**](https://youtu.be/X-zppQ0WpaU)

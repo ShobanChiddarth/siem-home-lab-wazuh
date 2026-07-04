@@ -147,3 +147,13 @@ This command will try out every password inside `/usr/share/wordlists/rockyou.tx
 
 Also after running this for a few seconds you will be blocked from SSHing into Debian, this is a security measure that comes in built. You can try entering the correct password but after running this command, it won't even go until the password prompt and will just say "Connection refused".
 
+## Logs queries used to filer the logs
+
+| Purpose | Query |
+| --- | --- |
+| Show only FIM events | `rule.groups:syscheck` |
+| Authentication failures | `rule.groups:authentication_failed` |
+| sudo to ROOT escalation | `rule.groups:sudo` |
+| Show events from Windows | `agent.name:windows-user` |
+| Show events from Debian | `agent.name:debian-admin` |
+

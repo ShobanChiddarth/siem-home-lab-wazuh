@@ -73,6 +73,20 @@
 | --- | --- | --- | --- |
 | 1 | `enp0s3` | `wazuh-lab-corporate` | DHCP |
 
+### Static Routes
+
+They were added via pfSense GUI as its CLI is limited. If they were Cisco IOS routers, these commands would be issued for static routes.
+
+On Corporate router:
+```ios
+ip route 192.168.59.0 255.255.255.0 172.16.0.2
+```
+
+On Attacker's router:
+```ios
+ip route 10.0.0.0 255.255.255.0 172.16.0.1
+```
+
 ### Reason for this Architecture
 
 1. The corporate LAN has to be fully isolated, so I went with VirtualBox internal network for it

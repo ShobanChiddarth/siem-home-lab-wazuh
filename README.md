@@ -159,4 +159,8 @@ Also after running this for a few seconds you will be blocked from SSHing into D
 
 ## Demo Video
 
-<iframe width="1905" height="876" src="https://www.youtube.com/embed/X-zppQ0WpaU" title="SIEM Home Lab in Wazuh Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+Scan this qr code to watch video:
+
+![demo-video](./assets/demo-video-qr-code.png)
+
+Or [**CLICK HERE**](https://youtu.be/X-zppQ0WpaU)

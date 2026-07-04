@@ -1,6 +1,6 @@
 # SIEM Home Lab - Wazuh
 
-## Objectives
+## What this lab demostrates
 
 1. Setup Wazuh server
 2. Deploy Wazuh agents in Windows and Debian (desktop)
